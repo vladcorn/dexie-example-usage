@@ -1,9 +1,11 @@
+import React from 'react';
 import { AddNewUser } from './components/AddNewUser';
 import { AddNewProjectTree } from './components/AddNewProjectTree';
 import { AddNewFile } from './components/AddNewFile';
 import './app.css';
 import { AddNewTreeState } from './components/AddNewTreeState/add-new-tree-state.component';
 import { UpdateProjectTree } from './components/UpdateProjectTree';
+import { UpdateFile } from './components/UpdateFile';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         </div>
         <div>
           <UpdateProjectTree />
+          <UpdateFile />
         </div>
       </div>
     </div>

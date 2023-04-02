@@ -33,9 +33,9 @@ export const UpdateProjectTree = () => {
   return (
     <div className="add-new-user">
       <h2>Update data project tree</h2>
-      <input type="text" onChange={handleChange} />
+      <input type="text" onChange={handleChange} placeholder="projectId" />
       <pre>{JSON.stringify(projectTree)}</pre>
-      <input type="text" onChange={handleUpdate} />
+      <input type="text" onChange={handleUpdate} placeholder="update project name" />
       <button onClick={handleUpdateBtn}>Update project Name</button>
     </div>
   );
