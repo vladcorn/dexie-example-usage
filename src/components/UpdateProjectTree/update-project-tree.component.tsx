@@ -4,7 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 
 export const UpdateProjectTree = () => {
   const [projectTreeId, setProjectTreeId] = useState('');
-  const projectTree = useLiveQuery(projectTreeService.getProjectTreeByTreeId.bind(null, projectTreeId), [
+  const projectTree = useLiveQuery(projectTreeService.getById.bind(null, projectTreeId), [
     projectTreeId,
   ]) as ProjectTree;
 
@@ -24,9 +24,9 @@ export const UpdateProjectTree = () => {
     [projectTreeName],
   );
   const handleUpdateBtn = useCallback(() => {
-    projectTreeService.updateProjectTreeByTreeId({
+    projectTreeService.update({
       ...projectTree,
-      content: { ...projectTree?.content, name: projectTreeName },
+      name: projectTreeName,
     });
   }, [projectTreeName]);
 
@@ -34,7 +34,7 @@ export const UpdateProjectTree = () => {
     <div className="add-new-user">
       <h2>Update data project tree</h2>
       <input type="text" onChange={handleChange} placeholder="projectId" />
-      <pre>{JSON.stringify(projectTree)}</pre>
+      <pre>{JSON.stringify(projectTree,null,2)}</pre>
       <input type="text" onChange={handleUpdate} placeholder="update project name" />
       <button onClick={handleUpdateBtn}>Update project Name</button>
     </div>

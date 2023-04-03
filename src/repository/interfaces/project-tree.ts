@@ -1,6 +1,5 @@
-export interface ProjectTree {
+export interface ProjectTree extends ProjectTreeContentMap {
   treeId: string; // userId_projectId_sha. sha is a `sha` from github
-  content: ProjectTreeContentMap;
 }
 
 export interface ProjectTreeContentMap {
@@ -8,8 +7,8 @@ export interface ProjectTreeContentMap {
   name: string;
   type: ProjectTreeNodeType;
   treeId: string; // userId_projectId_sha. sha is a `sha` from github
-  parentTreeId: string; // parent treeId
-  fileId: string;
+  parentTreeId: string | null; // parent treeId
+  fileId: string | null;
 }
 
 export type ProjectTreeNodeType = 'tree' | 'blob';

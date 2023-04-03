@@ -14,7 +14,7 @@ class AppDB extends Dexie {
     super('FreeIDEApp');
     this.version(1).stores({
       usersProjectTreeTable: `userProjectTreeId, rootTreeId`,
-      projectTreeTable: `treeId, content`,
+      projectTreeTable: `treeId, parentTreeId, path, name, type, fileId`,
       filesTable: `fileId, content`,
       projectTreeStateTable: `userIdProjectId, state`,
     });

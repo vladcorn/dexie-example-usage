@@ -6,6 +6,7 @@ import './app.css';
 import { AddNewTreeState } from './components/AddNewTreeState/add-new-tree-state.component';
 import { UpdateProjectTree } from './components/UpdateProjectTree';
 import { UpdateFile } from './components/UpdateFile';
+import { ListOfTreeNodes } from './components/ListOfTreeNodes';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <div>
           <UpdateProjectTree />
           <UpdateFile />
+          <ListOfTreeNodes />
         </div>
       </div>
     </div>
